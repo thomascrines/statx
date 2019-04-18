@@ -1,2 +1,0 @@
-"","id","label","location","type","lastModified","recordViewEnabled","children.id","children.label","children.location","children.type","children.functions"
-"1","str:database:PC_New","Pension Credit - Data from May 2018","https://stat-xplore.dwp.gov.uk/webapi/rest/v1/schema/str:database:PC_New","DATABASE",1555580436873,FALSE,"str:count:PC_New:V_F_PC_CASELOAD_New","Pension Credit Caseload - 2011 Geographies","https://stat-xplore.dwp.gov.uk/webapi/rest/v1/schema/str:count:PC_New:V_F_PC_CASELOAD_New","COUNT",
