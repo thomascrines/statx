@@ -15,7 +15,9 @@
 #' When invalid arguments are used returns \code{NULL} with \code{warning}.
 #'
 #' @examples
+#' \dontrun{
 #' statx_dataset(requestBody, tableUrl, accessKey)
+#'}
 #'
 #' @export
 
