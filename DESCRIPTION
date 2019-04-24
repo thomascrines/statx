@@ -2,7 +2,7 @@ Package: statxplorer
 Type: Package
 Title: Access Stat-Xplore API
 Version: 0.1.0
-Author@R: as.person("Thomas Crines <Thomas.Crines@gov.scot> [aut]")
+Author@R: person("Thomas", "Crines" email = "thomas.crines@gov.scot", role = c("aut", "cre"))
 Description: Pull data from the Stat-Xplore API, allowing data to be pulled as part of a reproducible analytical pipeline.
 URL: https://github.com/thomascrines/statxplorer
 BugReports: https://github.com/thomascrines/statxplorer/issues
@@ -13,3 +13,4 @@ Depends:
   httr,
   jsonlite,
   tidyverse
+RoxygenNote: 6.1.1
