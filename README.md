@@ -5,8 +5,6 @@ output: github_document
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 
-[![Travis-CI Build Status](https://travis-ci.com/thomascrines/statxplorer.svg?branch=master)](https://travis-ci.com/thomascrines/statxplorer)
-
 # statxplorer
 
 The goal of statxplorer is to ...
