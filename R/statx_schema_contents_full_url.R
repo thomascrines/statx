@@ -1,8 +1,7 @@
-getSchemaContents = function(schemaUrl, dataset, accessKey) {
-  datasetUrl <- paste(schemaUrl, dataset, sep="")
+statx_schema_contents_full_url = function(datasetUrl, accessKey) {
   datasetRaw <- GET(datasetUrl, add_headers(apiKey = accessKey), verbose())
   datasetText <- content(datasetRaw, "text")
   datasetJson <- fromJSON(datasetText, flatten = TRUE)
   datasetDataFrame <- as.data.frame(datasetJson)
-  # View(datasetDataFrame)
+  View(datasetDataFrame)
 }

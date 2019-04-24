@@ -1,4 +1,4 @@
-getDataset = function(requestBody, tableUrl, accessKey) {
+statx_dataset = function(requestBody, tableUrl, accessKey) {
 
   response <- POST(tableUrl,
                    content_type_json(),
