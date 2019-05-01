@@ -1,4 +1,4 @@
-statx_schema_contents_full_url = function(datasetUrl, accessKey) {
+statx_schema_contents_full_url = function(datasetUrl) {
   datasetRaw <- GET(datasetUrl, add_headers(apiKey = accessKey), verbose())
   datasetText <- content(datasetRaw, "text")
   datasetJson <- fromJSON(datasetText, flatten = TRUE)
