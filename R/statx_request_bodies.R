@@ -1,6 +1,12 @@
+# Undocumented code objects:
+#   ‘accessKey’ ‘alternativeClaimantCount’ ‘pensionCredits’ ‘schemaUrl’
+# ‘statx_schema_contents’ ‘statx_schema_contents_full_url’ ‘tableUrl’
+# All user-level objects in a package should have documentation entries.
+
 accessKey <- Sys.getenv("StatXploreApiKey")
 
 tableUrl <- "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/table"
+
 schemaUrl <- "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/schema/"
 
 pensionCredits <- '{
