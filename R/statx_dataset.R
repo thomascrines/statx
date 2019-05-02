@@ -14,10 +14,22 @@
 
 statx_dataset = function(requestBody) {
 
+  #Set API key from .Renviron file
+  accessKey <- Sys.getenv("StatXploreApiKey")
+
+  #API endpoint to reference
+  tableUrl <- "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/table"
+
+  #Set all available request bodies from files
+  files <- list.files("requestBodiesJson")
+  for(file in files) {
+    assign(tools::file_path_sans_ext(file), fromJSON(paste("requestBodiesJson/", file, sep = '')))}
+
+  #Send POST request to API
   response <- POST(tableUrl,
                    content_type_json(),
                    add_headers("APIKey" = accessKey),
-                   body = requestBody,
+                   body = toJSON(pensionCredits),
                    verbose())
 
   responseText <- content(response, "text")
