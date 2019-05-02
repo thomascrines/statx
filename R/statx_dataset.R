@@ -25,11 +25,13 @@ statx_dataset = function(requestBody) {
   for(file in files) {
     assign(tools::file_path_sans_ext(file), fromJSON(paste("requestBodiesJson/", file, sep = '')))}
 
+  requestBody = toJSON(requestBody)
+
   #Send POST request to API
   response <- POST(tableUrl,
                    content_type_json(),
                    add_headers("APIKey" = accessKey),
-                   body = toJSON(requestBody),
+                   body = requestBody,
                    verbose())
 
   responseText <- content(response, "text")
