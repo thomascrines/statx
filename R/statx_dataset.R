@@ -29,7 +29,7 @@ statx_dataset = function(requestBody) {
   response <- POST(tableUrl,
                    content_type_json(),
                    add_headers("APIKey" = accessKey),
-                   body = toJSON(pensionCredits),
+                   body = toJSON(requestBody),
                    verbose())
 
   responseText <- content(response, "text")
