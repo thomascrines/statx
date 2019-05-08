@@ -12,30 +12,21 @@
 #'
 #' @export
 
-statx_dataset = function(requestBody) {
+statx_dataset = function(request) {
 
-  #Set API key from .Renviron file
-  accessKey <- Sys.getenv("StatXploreApiKey")
+  accessKey <- Sys.getenv("StatXploreApiKey") # Set API key in .Renviron file
 
-  #API endpoint to reference
   tableUrl <- "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/table"
 
-  #Set all available request bodies from files
-  files <- list.files("requestBodiesJson")
-  for(file in files) {
-    assign(tools::file_path_sans_ext(file), fromJSON(paste("requestBodiesJson/", file, sep = '')))}
-
-  requestBody = toJSON(requestBody)
-
-  #Send POST request to API
-  response <- POST(tableUrl,
+  response <- httr::POST(tableUrl,
                    content_type_json(),
                    add_headers("APIKey" = accessKey),
-                   body = requestBody,
+                   body = (upload_file(paste("requestBodies/", request, ".json", sep = ""))),
                    verbose())
 
   responseText <- content(response, "text")
-  data <- fromJSON(responseText, flatten = TRUE)
+
+  data <- jsonlite::fromJSON(responseText, flatten = TRUE)
 
   # dimnames = data$fields$items %>%
   #   map(~.$labels %>% unlist)
