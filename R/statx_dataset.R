@@ -26,16 +26,57 @@ statx_dataset = function(request) {
 
   responseText <- content(response, "text")
 
-  data <- jsonlite::fromJSON(responseText, flatten = TRUE)
+  data <- jsonlite::fromJSON(responseText, simplifyVector = FALSE)
 
-  # dimnames = data$fields$items %>%
-  #   map(~.$labels %>% unlist)
+  measures <- purrr::map_chr(data$measures, function(measure) measure$label)
+
+  fields <- purrr::map_chr(data$fields, function(field) field$label)
+
+  items <- purrr::map(data$fields, function(field) {
+    unlist(lapply(field$items, function(item) item$labels))
+    })
+
+  names(items) <- fields
+
+  uris <- purrr::map(data$fields, function(field) {
+    unlist(lapply(field$items, function(item) item$uris))
+    })
+
+  names(uris) <- fields
+
+  dfs <- purrr::imap(measures, function(measure, i) {
+
+    df <- extract_items_df(items)
+
+    values <- unlist(data$cubes[[i]][[1]])
+
+    num_rows <- nrow(df)
+
+    num_values <- length(values)
+
+    df[[measure]] <- values
+
+    df
+    })
+
+  dfs[[1]]
+
+  # names(dfs) <- measures
   #
-  # values = data$cubes[[1]]$values
-  #
-  # dimnames(values) = dimnames
-  #
-  # df = as.data.frame.table(values, stringsAsFactors = FALSE) %>%
-  #   as_tibble() %>%
-  #   set_names(c(data$fields$label,"value"))
-}
+  # list(
+  #   measures = measures,
+  #   fields = fields,
+  #   items = items,
+  #   uris = uris,
+  #   dfs = dfs)
+
+  }
+
+  extract_items_df <- function(items) {
+
+    items <- purrr::imap(items, function(items, field) {
+      tibble::tibble(!!field := items)
+      })
+
+    do.call(tidyr::crossing, items)
+  }
