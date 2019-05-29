@@ -4,12 +4,12 @@
 \alias{statx_add_request}
 \title{Add a JSON request body}
 \usage{
-statx_add_request(requestName, filePath)
+statx_add_request(request_name, file_path)
 }
 \arguments{
-\item{requestName}{\code{string}. A user-defined name for the request.}
+\item{request_name}{\code{string}. A user-defined name for the request.}
 
-\item{filePath}{\code{string}. The file path of the saved JSON request.}
+\item{file_path}{\code{string}. The file path of the saved JSON request.}
 }
 \value{
 \code{tibble}.
@@ -21,8 +21,8 @@ When invalid arguments are used returns \code{NULL} with \code{warning}.
 \details{
 \code{statx_add_request} copies and renames a JSON file from an existing location to statxplorer, to make it available
 to be called in \code{statx_dataset}.
-The \code{requestName} parameter must be passed a user-defined string in order to name the request.
-The \code{filePath} parameter must be passed a file path of an existing JSON request file.
+The \code{request_name} parameter must be passed a user-defined string in order to name the request.
+The \code{file_path} parameter must be passed a file path of an existing JSON request file.
 JSON files can be written by hand according to the \href{https://stat-xplore.dwp.gov.uk/webapi/online-help/Open-Data-API-Table.html}
 {Stat-Xplore guidelines}, but it is easier to create a table using the \href{https://stat-xplore.dwp.gov.uk/webapi/jsf/dataCatalogueExplorer.xhtml}
 {Stat-Xplore table generator} and saving the output as \code{Open Data API Query (.json)}.

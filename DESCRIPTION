@@ -9,7 +9,7 @@ BugReports: https://github.com/thomascrines/statxplorer/issues
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-Depends:
+Imports:
   httr,
   jsonlite,
   tidyverse,

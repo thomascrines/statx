@@ -14,7 +14,7 @@
 #'
 #' @export
 
-statx_print_request = function(request) {
+statx_print_request <- function(request) {
   file <- paste("requestBodies/", request, ".json", sep = "")
   writeLines(readLines(file))
 }

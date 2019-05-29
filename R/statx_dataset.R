@@ -16,21 +16,24 @@
 #'
 #' @export
 
-statx_dataset = function(request) {
+statx_dataset <- function(request) {
 
-  accessKey <- Sys.getenv("StatXploreApiKey") # Set API key in .Renviron file
+  access_key <- Sys.getenv("StatXploreApiKey") # Set API key in .Renviron file
 
-  tableUrl <- "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/table"
+  table_url <- "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/table"
 
-  response <- httr::POST(tableUrl,
+  response <- httr::POST(table_url,
                    content_type_json(),
-                   add_headers("APIKey" = accessKey),
-                   body = (upload_file(paste("requestBodies/", request, ".json", sep = ""))),
+                   add_headers("APIKey" = access_key),
+                   body = (upload_file(paste("requestBodies/",
+                                             request,
+                                             ".json",
+                                             sep = ""))),
                    verbose())
 
-  responseText <- content(response, "text")
+  response_text <- content(response, "text")
 
-  data <- jsonlite::fromJSON(responseText, simplifyVector = FALSE)
+  data <- jsonlite::fromJSON(response_text, simplifyVector = FALSE)
 
   measures <- purrr::map_chr(data$measures, function(measure) measure$label)
 
@@ -58,10 +61,6 @@ statx_dataset = function(request) {
 
     values <- unlist(data$cubes[[i]][[1]])
 
-    num_rows <- nrow(df)
-
-    num_values <- length(values)
-
     df[[measure]] <- values
 
     df
@@ -79,4 +78,3 @@ statx_dataset = function(request) {
   #   dfs = dfs)
 
   }
-
