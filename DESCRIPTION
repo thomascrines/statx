@@ -13,7 +13,7 @@ Depends:
   httr,
   jsonlite,
   tidyverse,
-  purr,
+  purrr,
   tibble,
   tidyr
 RoxygenNote: 6.1.1
