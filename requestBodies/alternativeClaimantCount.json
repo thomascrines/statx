@@ -1,0 +1,93 @@
+{
+  "database" : "str:database:ACC",
+  "measures" : [ "str:count:ACC:V_F_ACC" ],
+  "recodes" : {
+    "str:field:ACC:V_F_ACC:AGE" : {
+      "map" : [
+        [ "str:value:ACC:V_F_ACC:AGE:C_ACC_AGE_BAND:1" ],
+        [ "str:value:ACC:V_F_ACC:AGE:C_ACC_AGE_BAND:2" ],
+        [ "str:value:ACC:V_F_ACC:AGE:C_ACC_AGE_BAND:3" ],
+        [ "str:value:ACC:V_F_ACC:AGE:C_ACC_AGE_BAND:4" ],
+        [ "str:value:ACC:V_F_ACC:AGE:C_ACC_AGE_BAND:5" ],
+        [ "str:value:ACC:V_F_ACC:AGE:C_ACC_AGE_BAND:6" ],
+        [ "str:value:ACC:V_F_ACC:AGE:C_ACC_AGE_BAND:7" ],
+        [ "str:value:ACC:V_F_ACC:AGE:C_ACC_AGE_BAND:8" ],
+        [ "str:value:ACC:V_F_ACC:AGE:C_ACC_AGE_BAND:9" ],
+        [ "str:value:ACC:V_F_ACC:AGE:C_ACC_AGE_BAND:10" ],
+        [ "str:value:ACC:V_F_ACC:AGE:C_ACC_AGE_BAND:99" ]
+        ],
+      "total" : true
+    },
+    "str:field:ACC:V_F_ACC:GROUP" : {
+      "map" : [
+        [ "str:value:ACC:V_F_ACC:GROUP:C_ACC_GROUPCLASS:1" ],
+        [ "str:value:ACC:V_F_ACC:GROUP:C_ACC_GROUPCLASS:2" ],
+        [ "str:value:ACC:V_F_ACC:GROUP:C_ACC_GROUPCLASS:3" ]
+        ],
+      "total" : true
+    },
+    "str:field:ACC:V_F_ACC:OA11" : {
+      "map" : [
+        [ "str:value:ACC:V_F_ACC:OA11:V_C_MASTERGEOG11_LA_TO_REGION:S12000033" ],
+        [ "str:value:ACC:V_F_ACC:OA11:V_C_MASTERGEOG11_LA_TO_REGION:S12000034" ],
+        [ "str:value:ACC:V_F_ACC:OA11:V_C_MASTERGEOG11_LA_TO_REGION:S12000041" ],
+        [ "str:value:ACC:V_F_ACC:OA11:V_C_MASTERGEOG11_LA_TO_REGION:S12000035" ],
+        [ "str:value:ACC:V_F_ACC:OA11:V_C_MASTERGEOG11_LA_TO_REGION:S12000036" ],
+        [ "str:value:ACC:V_F_ACC:OA11:V_C_MASTERGEOG11_LA_TO_REGION:S12000005" ],
+        [ "str:value:ACC:V_F_ACC:OA11:V_C_MASTERGEOG11_LA_TO_REGION:S12000006" ],
+        [ "str:value:ACC:V_F_ACC:OA11:V_C_MASTERGEOG11_LA_TO_REGION:S12000042" ],
+        [ "str:value:ACC:V_F_ACC:OA11:V_C_MASTERGEOG11_LA_TO_REGION:S12000008" ],
+        [ "str:value:ACC:V_F_ACC:OA11:V_C_MASTERGEOG11_LA_TO_REGION:S12000045" ],
+        [ "str:value:ACC:V_F_ACC:OA11:V_C_MASTERGEOG11_LA_TO_REGION:S12000010" ],
+        [ "str:value:ACC:V_F_ACC:OA11:V_C_MASTERGEOG11_LA_TO_REGION:S12000011" ],
+        [ "str:value:ACC:V_F_ACC:OA11:V_C_MASTERGEOG11_LA_TO_REGION:S12000014" ],
+        [ "str:value:ACC:V_F_ACC:OA11:V_C_MASTERGEOG11_LA_TO_REGION:S12000047" ],
+        [ "str:value:ACC:V_F_ACC:OA11:V_C_MASTERGEOG11_LA_TO_REGION:S12000046" ],
+        [ "str:value:ACC:V_F_ACC:OA11:V_C_MASTERGEOG11_LA_TO_REGION:S12000017" ],
+        [ "str:value:ACC:V_F_ACC:OA11:V_C_MASTERGEOG11_LA_TO_REGION:S12000018" ],
+        [ "str:value:ACC:V_F_ACC:OA11:V_C_MASTERGEOG11_LA_TO_REGION:S12000019" ],
+        [ "str:value:ACC:V_F_ACC:OA11:V_C_MASTERGEOG11_LA_TO_REGION:S12000020" ],
+        [ "str:value:ACC:V_F_ACC:OA11:V_C_MASTERGEOG11_LA_TO_REGION:S12000013" ],
+        [ "str:value:ACC:V_F_ACC:OA11:V_C_MASTERGEOG11_LA_TO_REGION:S12000021" ],
+        [ "str:value:ACC:V_F_ACC:OA11:V_C_MASTERGEOG11_LA_TO_REGION:S12000044" ],
+        [ "str:value:ACC:V_F_ACC:OA11:V_C_MASTERGEOG11_LA_TO_REGION:S12000023" ],
+        [ "str:value:ACC:V_F_ACC:OA11:V_C_MASTERGEOG11_LA_TO_REGION:S12000048" ],
+        [ "str:value:ACC:V_F_ACC:OA11:V_C_MASTERGEOG11_LA_TO_REGION:S12000038" ],
+        [ "str:value:ACC:V_F_ACC:OA11:V_C_MASTERGEOG11_LA_TO_REGION:S12000026" ],
+        [ "str:value:ACC:V_F_ACC:OA11:V_C_MASTERGEOG11_LA_TO_REGION:S12000027" ],
+        [ "str:value:ACC:V_F_ACC:OA11:V_C_MASTERGEOG11_LA_TO_REGION:S12000028" ],
+        [ "str:value:ACC:V_F_ACC:OA11:V_C_MASTERGEOG11_LA_TO_REGION:S12000029" ],
+        [ "str:value:ACC:V_F_ACC:OA11:V_C_MASTERGEOG11_LA_TO_REGION:S12000030" ],
+        [ "str:value:ACC:V_F_ACC:OA11:V_C_MASTERGEOG11_LA_TO_REGION:S12000039" ],
+        [ "str:value:ACC:V_F_ACC:OA11:V_C_MASTERGEOG11_LA_TO_REGION:S12000040" ]
+        ],
+      "total" : true
+    },
+    "str:field:ACC:F_ACC_DATE_new:DATE_NAME" : {
+      "map" : [
+        [ "str:value:ACC:F_ACC_DATE_new:DATE_NAME:C_ACC_DATE:201302" ],
+        [ "str:value:ACC:F_ACC_DATE_new:DATE_NAME:C_ACC_DATE:201402" ],
+        [ "str:value:ACC:F_ACC_DATE_new:DATE_NAME:C_ACC_DATE:201502" ],
+        [ "str:value:ACC:F_ACC_DATE_new:DATE_NAME:C_ACC_DATE:201602" ],
+        [ "str:value:ACC:F_ACC_DATE_new:DATE_NAME:C_ACC_DATE:201702" ],
+        [ "str:value:ACC:F_ACC_DATE_new:DATE_NAME:C_ACC_DATE:201802" ],
+        [ "str:value:ACC:F_ACC_DATE_new:DATE_NAME:C_ACC_DATE:201902" ]
+        ],
+      "total" : false
+    },
+    "str:field:ACC:V_F_ACC:CCSEX" : {
+      "map" : [
+        [ "str:value:ACC:V_F_ACC:CCSEX:C_ACC_CCSEX:M" ],
+        [ "str:value:ACC:V_F_ACC:CCSEX:C_ACC_CCSEX:F" ]
+        ],
+      "total" : true
+    }
+  },
+  "dimensions" : [
+    [ "str:field:ACC:V_F_ACC:OA11" ],
+    [ "str:field:ACC:F_ACC_DATE_new:DATE_NAME" ],
+    [ "str:field:ACC:V_F_ACC:AGE" ],
+    [ "str:field:ACC:V_F_ACC:CCSEX" ],
+    [ "str:field:ACC:V_F_ACC:GROUP" ]
+    ]
+}
