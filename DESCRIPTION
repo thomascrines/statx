@@ -12,7 +12,10 @@ LazyData: true
 Depends:
   httr,
   jsonlite,
-  tidyverse
+  tidyverse,
+  purr,
+  tibble,
+  tidyr
 RoxygenNote: 6.1.1
 Suggests: 
     testthat
