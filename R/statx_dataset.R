@@ -31,7 +31,7 @@ statx_dataset <- function(request) {
                                              sep = ""))),
                    verbose())
 
-  response_text <- content(response, "text")
+  response_text <- httr::content(response, "text")
 
   data <- jsonlite::fromJSON(response_text, simplifyVector = FALSE)
 
@@ -67,14 +67,5 @@ statx_dataset <- function(request) {
     })
 
   dfs[[1]]
-
-  # names(dfs) <- measures
-  #
-  # list(
-  #   measures = measures,
-  #   fields = fields,
-  #   items = items,
-  #   uris = uris,
-  #   dfs = dfs)
 
   }
