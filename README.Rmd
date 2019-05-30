@@ -69,18 +69,18 @@ to refer to your variables.
 
 ## Example
 
-# statx_add_request
+### statx_add_request
 
 statxplorer requires a JSON request body to send in a POST request to the Stat-Xplore API. To create one, either write one by hand by the Stat-Xplore guidelines, or use the webite to build a table and save it as Open Data API (.json). Once you have a .json file containing a request, run statx_add_request to add it to statexplorer, passing in your desired name for the file and the path of your existing file. For example, if you have a file with the path 'C:\\Downloads\\PensionCreditsNew001.json', that you want to save as 'PensionCredits', run `statx_add_request('PensionCredits', 'C:\\Downloads\\PensionCreditsNew001.json')`.
 
-# statx_requests
+### statx_requests
 
 To see a full list of the names of all available JSON requests, run `statx_requests()`.
 
-# statx_print_request
+### statx_print_request
 
 To print the contents of a .json request file to the console pass the name of the request to statx_print_request. For example, `statx_print_request('PensionCredits')`.
 
-# statx_dataset
+### statx_dataset
 
 To return a complete dataset from Stat-Xplore based on an existing JSON request, pass the name of the request to statx_dataset. For example, `statx_dataset('PensionCredits')`.
