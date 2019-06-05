@@ -1,2 +1,5 @@
 StatXploreApiKey = "test"
 StatXploreApiKey = "test"
+StatXploreApiKey = "xxxx"
+StatXploreApiKey = "thing"
+StatXploreApiKey = "nothing"

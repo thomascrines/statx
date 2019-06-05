@@ -1,4 +1,4 @@
-#' Set directory to store requests
+#' Set user-specific API key
 #'
 #' \code{statx_set_request_location} sets a directory to use to store requests.
 #'
@@ -8,13 +8,33 @@
 #' The \code{file_path} parameter must be passed a file path of an existing JSON request file.
 #' JSON files can be written by hand according to the \href{https://stat-xplore.dwp.gov.uk/webapi/online-help/Open-Data-API-Table.html}{Stat-Xplore guidelines}, but it is easier to create a table using the \href{https://stat-xplore.dwp.gov.uk/webapi/jsf/dataCatalogueExplorer.xhtml}{Stat-Xplore table generator} and saving the output as \code{Open Data API Query (.json)}.
 #'
-#' @param directory_path \code{string}. A user-defined directory path.
+#' @param request_location \code{string}. A user-defined directory path.
 #'
 #' @return \code{tibble}.
 #' When invalid arguments are used returns \code{NULL} with \code{warning}.
 #'
 #' @export
 
-statx_set_request_location <- function(directory_path) {
-file_path <<- directory_path
+statx_set_request_location <- function(request_location) {
+  renviron <- paste(Sys.getenv('R_USER'), "/.Renviron", sep = "")
+
+  if (file.exists(renviron) == FALSE) {
+    file.create("C:/Users/dsap01/Documents/.Renviron")
+  }
+
+  currentLines <- readLines(renviron)
+  con <- file(renviron, open = 'r')
+  linesToKeep <- c()
+
+  if (length(currentLines) != 0) {
+    while(TRUE) {
+      line <- readLines(con, n = 1)
+      if(length(line) == 0) break
+      else if(!startsWith(line, "StatXploreRequestLocation")){
+        linesToKeep <- c(linesToKeep, line)
+      }
+    }
+  }
+  writeLines(paste('StatXploreRequestLocation = "', request_location, '"', sep = ""), renviron)
+  write(linesToKeep, file = renviron, append = TRUE)
 }

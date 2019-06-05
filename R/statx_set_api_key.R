@@ -1,8 +1,8 @@
 #' Set user-specific API key
 #'
-#' \code{statx_set_request_location} sets a directory to use to store requests.
+#' \code{statx_set_api_key} sets a directory to use to store requests.
 #'
-#' \code{statx_set_request_location} copies and renames a JSON file from an existing location to statxplorer, to make it available
+#' \code{statx_set_api_key} copies and renames a JSON file from an existing location to statxplorer, to make it available
 #' to be called in \code{statx_dataset}.
 #' The \code{request_name} parameter must be passed a user-defined string in order to name the request.
 #' The \code{file_path} parameter must be passed a file path of an existing JSON request file.
@@ -19,22 +19,22 @@ statx_set_api_key <- function(api_key) {
   renviron <- paste(Sys.getenv('R_USER'), "/.Renviron", sep = "")
 
   if (file.exists(renviron) == FALSE) {
-  file.create("C:/Users/dsap01/Documents/.Renviron")
+    file.create("C:/Users/dsap01/Documents/.Renviron")
   }
 
   currentLines <- readLines(renviron)
   con <- file(renviron, open = 'r')
+  linesToKeep <- c()
 
   if (length(currentLines) != 0) {
     while(TRUE) {
       line <- readLines(con, n = 1)
       if(length(line) == 0) break
-      else if(startsWith(line, "StatXploreApiKey")){
-        write(line, file = "something.txt", append = TRUE)
+      else if(!startsWith(line, "StatXploreApiKey")){
+        linesToKeep <- c(linesToKeep, line)
       }
     }
   }
   writeLines(paste('StatXploreApiKey = "', api_key, '"', sep = ""), renviron)
+  write(linesToKeep, file = renviron, append = TRUE)
 }
-
-
