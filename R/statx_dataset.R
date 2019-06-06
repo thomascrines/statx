@@ -23,13 +23,14 @@ statx_dataset <- function(request) {
   table_url <- "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/table"
 
   response <- httr::POST(table_url,
-                   content_type_json(),
-                   add_headers("APIKey" = access_key),
-                   body = (upload_file(paste("requestBodies/",
+                   httr::content_type_json(),
+                   httr::add_headers("APIKey" = access_key),
+                   body = (httr::upload_file(paste(Sys.getenv("RequestBodyFolderPath"),
+                                             '\\',
                                              request,
                                              ".json",
                                              sep = ""))),
-                   verbose())
+                   httr::verbose())
 
   response_text <- httr::content(response, "text")
 

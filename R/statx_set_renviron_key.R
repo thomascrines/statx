@@ -1,25 +1,25 @@
-#' Set user-specific API key
+#' Add or update .Renviron key
 #'
-#' \code{statx_set_request_location} sets a directory to use to store requests.
+#' \code{statx_set_renviron_key} adds or updates a key in .Renviron file
 #'
-#' \code{statx_set_request_location} copies and renames a JSON file from an existing location to statxplorer, to make it available
-#' to be called in \code{statx_dataset}.
-#' The \code{request_name} parameter must be passed a user-defined string in order to name the request.
+#' \code{statx_set_renviron_key} adds or updates a key in \code{.Renviron}.
+#' The \code{renviron_key} parameter must be passed a user-defined string in order to name the request.
 #' The \code{file_path} parameter must be passed a file path of an existing JSON request file.
 #' JSON files can be written by hand according to the \href{https://stat-xplore.dwp.gov.uk/webapi/online-help/Open-Data-API-Table.html}{Stat-Xplore guidelines}, but it is easier to create a table using the \href{https://stat-xplore.dwp.gov.uk/webapi/jsf/dataCatalogueExplorer.xhtml}{Stat-Xplore table generator} and saving the output as \code{Open Data API Query (.json)}.
 #'
-#' @param request_location \code{string}. A user-defined directory path.
+#' @param key \code{string}. The key to add or update.
+#' @param value \code{string}. The value to apply to the key.
 #'
 #' @return \code{tibble}.
 #' When invalid arguments are used returns \code{NULL} with \code{warning}.
 #'
-#' @export
+#' @internal
 
-statx_set_request_location <- function(request_location) {
+statx_set_renviron_key <- function(key, value) {
   renviron <- paste(Sys.getenv('R_USER'), "/.Renviron", sep = "")
 
   if (file.exists(renviron) == FALSE) {
-    file.create("C:/Users/dsap01/Documents/.Renviron")
+    file.create(renviron)
   }
 
   currentLines <- readLines(renviron)
@@ -30,11 +30,12 @@ statx_set_request_location <- function(request_location) {
     while(TRUE) {
       line <- readLines(con, n = 1)
       if(length(line) == 0) break
-      else if(!startsWith(line, "StatXploreRequestLocation")){
+      else if(!startsWith(line, key)){
         linesToKeep <- c(linesToKeep, line)
       }
     }
   }
-  writeLines(paste('StatXploreRequestLocation = "', request_location, '"', sep = ""), renviron)
+  writeLines(paste(key, ' = "', value, '"', sep = ""), renviron)
   write(linesToKeep, file = renviron, append = TRUE)
+  close.connection(con)
 }
