@@ -12,8 +12,9 @@ statx_add_request(request_name, file_path)
 \item{file_path}{\code{string}. The file path of the saved JSON request.}
 }
 \value{
-\code{tibble}.
-When invalid arguments are used returns \code{NULL} with \code{warning}.
+\code{logical}.
+\code{TRUE} when request body is successfully added.
+If \code{FALSE} will return error message.
 }
 \description{
 \code{statx_add_request} copies and renames a JSON file from an existing location to statxplorer.

@@ -2,5 +2,8 @@
 
 export(statx_add_request)
 export(statx_dataset)
+export(statx_delete_request)
 export(statx_print_request)
 export(statx_requests)
+export(statx_set_api_key)
+export(statx_set_request_folder)

@@ -11,8 +11,9 @@
 #' @param request_name \code{string}. A user-defined name for the request.
 #' @param file_path \code{string}. The file path of the saved JSON request.
 #'
-#' @return \code{tibble}.
-#' When invalid arguments are used returns \code{NULL} with \code{warning}.
+#' @return \code{logical}.
+#' \code{TRUE} when request body is successfully added.
+#' If \code{FALSE} will return error message.
 #'
 #' @export
 
