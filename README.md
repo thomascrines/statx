@@ -91,7 +91,8 @@ to set the request folder to ‘C:\\Documents\\StatXploreRequests’ run
 statxplorer requires a JSON request body to send in a POST request to
 the Stat-Xplore API. To create one, either write one by hand by the
 Stat-Xplore guidelines, or use the webite to build a table and save it
-as Open Data API (.json). Once you have a .json file containing a
+as Open Data API (.json). An example is included in this project
+(ExampleRequestBody.json). Once you have a .json file containing a
 request, run statx\_add\_request to add it to statexplorer, passing in
 your desired name for the file and the path of your existing file. For
 example, if you have a file with the path

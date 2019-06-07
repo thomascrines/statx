@@ -73,7 +73,7 @@ statxplorer is based on POST request bodies in JSON format, stored in files (mor
 
 ### statx_add_request
 
-statxplorer requires a JSON request body to send in a POST request to the Stat-Xplore API. To create one, either write one by hand by the Stat-Xplore guidelines, or use the webite to build a table and save it as Open Data API (.json). Once you have a .json file containing a request, run statx_add_request to add it to statexplorer, passing in your desired name for the file and the path of your existing file. For example, if you have a file with the path 'C:\\Downloads\\PensionCreditsNew001.json', that you want to save as 'PensionCredits', run `statx_add_request('PensionCredits', 'C:\\Downloads\\PensionCreditsNew001.json')`.
+statxplorer requires a JSON request body to send in a POST request to the Stat-Xplore API. To create one, either write one by hand by the Stat-Xplore guidelines, or use the webite to build a table and save it as Open Data API (.json). An example is included in this project (ExampleRequestBody.json). Once you have a .json file containing a request, run statx_add_request to add it to statexplorer, passing in your desired name for the file and the path of your existing file. For example, if you have a file with the path 'C:\\Downloads\\PensionCreditsNew001.json', that you want to save as 'PensionCredits', run `statx_add_request('PensionCredits', 'C:\\Downloads\\PensionCreditsNew001.json')`.
 
 Alternatively, save and rename directly in the folder specified in statx_set_request_folder.
 
