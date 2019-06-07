@@ -10,9 +10,7 @@
 #' \href{https://stat-xplore.dwp.gov.uk/webapi/online-help/Open-Data-API-Table.html}{Stat-Xplore help} and \code{statx_add request}
 #' for advice on creating a request body.
 #'
-#' @return \code{logical}.
-#' If \code{TRUE} request will be saved to the 'requestBodies' folder.
-#' If \code{FALSE} will return error message.
+#' @return \code{tibble}. A tibble of the data described in the JSON request.
 #'
 #' @export
 

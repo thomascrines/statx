@@ -10,7 +10,9 @@
 #' \href{https://stat-xplore.dwp.gov.uk/webapi/online-help/Open-Data-API-Table.html}{Stat-Xplore help} and \code{statx_add request}
 #' for advice on creating a request body.
 #'
-#' @return \code{string}. A JSON request body printed to the console.
+#' @return \code{logical}.
+#' \code{TRUE} when request body is successfully deleted.
+#' If \code{FALSE} will return error message.
 #'
 #' @export
 

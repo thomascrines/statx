@@ -1,16 +1,16 @@
-#' Add or update .Renviron API key
+#' Add or update the 'StatXploreApiKey' in .Renviron
 #'
-#' \code{statx_set_api_key} adds or updates a key in .Renviron file
+#' \code{statx_set_api_key} adds or updates the 'StatXploreApiKey' key in .Renviron file
 #'
-#' \code{statx_set_renviron_key} adds or updates a key in \code{.Renviron}.
-#' The \code{renviron_key} parameter must be passed a user-defined string in order to name the request.
-#' The \code{file_path} parameter must be passed a file path of an existing JSON request file.
-#' JSON files can be written by hand according to the \href{https://stat-xplore.dwp.gov.uk/webapi/online-help/Open-Data-API-Table.html}{Stat-Xplore guidelines}, but it is easier to create a table using the \href{https://stat-xplore.dwp.gov.uk/webapi/jsf/dataCatalogueExplorer.xhtml}{Stat-Xplore table generator} and saving the output as \code{Open Data API Query (.json)}.
+#' \code{statx_set_renviron_key} adds or updates a key in \code{.Renviron} using the internal function \code{statx_set_renviron_key}.
+#' The \code{api_path} parameter must be passed a valid StatXplore API key.
+#' Information about how to get an API key can be found at \href{https://stat-xplore.dwp.gov.uk/webapi/online-help/Open-Data-API.html}{Stat-Xplore guidelines}.
 #'
-#' @param key \code{api_key}. The key to add or update.
+#' @param api_key \code{string}. The key to add or update.
 #'
-#' @return \code{tibble}.
-#' When invalid arguments are used returns \code{NULL} with \code{warning}.
+#' @return \code{logical}.
+#' \code{TRUE} when key is successfully updated.
+#' If \code{FALSE} will return error message.
 #'
 #' @export
 

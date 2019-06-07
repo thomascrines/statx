@@ -12,7 +12,9 @@ statx_delete_request(request)
 for advice on creating a request body.}
 }
 \value{
-\code{string}. A JSON request body printed to the console.
+\code{logical}.
+\code{TRUE} when request body is successfully deleted.
+If \code{FALSE} will return error message.
 }
 \description{
 \code{statx_delete_request} deletes a saved JSON request body file

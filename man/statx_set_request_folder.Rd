@@ -2,23 +2,23 @@
 % Please edit documentation in R/statx_set_request_folder.R
 \name{statx_set_request_folder}
 \alias{statx_set_request_folder}
-\title{Add or update .Renviron folder loaction}
+\title{Add or update the 'RequestBodyFolderPath' in .Renviron}
 \usage{
 statx_set_request_folder(folder_path)
 }
 \arguments{
-\item{key}{\code{api_key}. The key to add or update.}
+\item{folder_path}{\code{string}. An existing folder path, which is where request bodies will be stored and run from.}
 }
 \value{
-\code{tibble}.
-When invalid arguments are used returns \code{NULL} with \code{warning}.
+\code{logical}.
+\code{TRUE} when key is successfully updated.
+If \code{FALSE} will return error message.
 }
 \description{
-\code{statx_set_request_folder} adds or updates a key in .Renviron file
+\code{statx_set_request_folder} adds or updates the 'RequestBodyFolderPath' key in .Renviron file
 }
 \details{
-\code{statx_set_request_folder} adds or updates a key in \code{.Renviron}.
-The \code{renviron_key} parameter must be passed a user-defined string in order to name the request.
-The \code{file_path} parameter must be passed a file path of an existing JSON request file.
-JSON files can be written by hand according to the \href{https://stat-xplore.dwp.gov.uk/webapi/online-help/Open-Data-API-Table.html}{Stat-Xplore guidelines}, but it is easier to create a table using the \href{https://stat-xplore.dwp.gov.uk/webapi/jsf/dataCatalogueExplorer.xhtml}{Stat-Xplore table generator} and saving the output as \code{Open Data API Query (.json)}.
+\code{statx_set_request_folder} adds or updates the 'RequestBodyFolderPath' key in \code{.Renviron} using the internal function \code{statx_set_renviron_key}.
+The \code{folder_path} parameter must be passed an existing folder path, which is where request bodies will be stored and run from.
+Backslashes must be escaped, e.g. \code{C:\\Documents\\FolderName} must be input as \code{C:\\\\Documents\\\\FolderName}.
 }

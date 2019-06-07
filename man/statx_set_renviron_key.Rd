@@ -12,15 +12,20 @@ statx_set_renviron_key(key, value)
 \item{value}{\code{string}. The value to apply to the key.}
 }
 \value{
-\code{tibble}.
-When invalid arguments are used returns \code{NULL} with \code{warning}.
+\code{logical}.
+\code{TRUE} when key is successfully updated.
+If \code{FALSE} will return error message.
 }
 \description{
 \code{statx_set_renviron_key} adds or updates a key in .Renviron file
 }
 \details{
 \code{statx_set_renviron_key} adds or updates a key in \code{.Renviron}.
-The \code{renviron_key} parameter must be passed a user-defined string in order to name the request.
-The \code{file_path} parameter must be passed a file path of an existing JSON request file.
-JSON files can be written by hand according to the \href{https://stat-xplore.dwp.gov.uk/webapi/online-help/Open-Data-API-Table.html}{Stat-Xplore guidelines}, but it is easier to create a table using the \href{https://stat-xplore.dwp.gov.uk/webapi/jsf/dataCatalogueExplorer.xhtml}{Stat-Xplore table generator} and saving the output as \code{Open Data API Query (.json)}.
+It is an internal function, called in \code{statx_set_api_key} and \code{statx_set_request_folder},
+preventing other keys being accidentally altered.
+If there is no existing .Renviron in the home directory it is created.
+For changes to take effect the R session must be restarted.
+The \code{renviron_key} parameter must be passed a name for the key.
+The \code{value} parameter must be passed the value to assign to the key.
 }
+\keyword{internal}

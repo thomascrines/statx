@@ -12,9 +12,7 @@ statx_dataset(request)
 for advice on creating a request body.}
 }
 \value{
-\code{logical}.
-If \code{TRUE} request will be saved to the 'requestBodies' folder.
-If \code{FALSE} will return error message.
+\code{tibble}. A tibble of the data described in the JSON request.
 }
 \description{
 \code{statx_dataset} returns a dataset from \href{https://stat-xplore.dwp.gov.uk/webapi/jsf/login.xhtml}{Stat-Xplore}
