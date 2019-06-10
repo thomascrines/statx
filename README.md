@@ -5,22 +5,22 @@
 has not yet been a stable, usable release suitable for the
 public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 [![Travis-CI Build
-Status](https://travis-ci.com/thomascrines/statxplorer.svg?token=u9YrQxZw2wBxcEUArp4X&branch=master)](https://travis-ci.com/thomascrines/statxplorer)
+Status](https://travis-ci.com/thomascrines/statx.svg?token=u9YrQxZw2wBxcEUArp4X&branch=master)](https://travis-ci.com/thomascrines/statx)
 
-# statxplorer
+# statx
 
-Use statxplorer to download data from
+Use statx to download data from
 [Stat-Xplore](https://stat-xplore.dwp.gov.uk/webapi/jsf/login.xhtml).
-statxplorer can be used interactively, or as part of a [reproducible
+statx can be used interactively, or as part of a [reproducible
 analytical pipeline](https://ukgovdatascience.github.io/rap_companion/).
 
-*After development was started, we became aware of a similar package
-with the same name on
-[Github](https://github.com/olihawkins/statxplorer). As slightly
+There are two existing packages on GitHub that are designed to pull from
+the Stat-Xplore API; one by [Oli
+Hawkins](https://github.com/olihawkins/statxplorer) and one by [David
+Millson](https://github.com/davidmillson/stat-xplore-R). As slightly
 different functionality is required in this package development is
-continuing, although the data-wrangling section of the first package was
-used as a basis for the statx\_dataset function. We plan to change the
-name soon to avoid confusion.*
+continuing, although the data-wrangling section of Oli Hawkins package
+was used in the statx\_dataset function.
 
 ## Installation
 
@@ -28,13 +28,13 @@ Install opendatascot from GitHub with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("thomascrines/statxplorer")
+devtools::install_github("thomascrines/statx")
 ```
 
 If the above does not work, you can install from source:
 
-1.  Go to the statxplorer
-    [repository](https://github.com/thomascrines/statxplorer) on GitHub
+1.  Go to the statx [repository](https://github.com/thomascrines/statx)
+    on GitHub
 2.  Click **Clone or download** then **Download ZIP**
 3.  Save the file locally (e.g. your H drive) and Unzip
 4.  Install with install.packages()
@@ -42,7 +42,7 @@ If the above does not work, you can install from source:
 <!-- end list -->
 
 ``` r
-install.packages("your/directory/statxplorer", repos = NULL,
+install.packages("your/directory/statx", repos = NULL,
                  type="source", lib = "your/R/package/library/directory")
 ```
 
@@ -58,7 +58,7 @@ Once you have an API key, you can add it to an .Renviron file in your
 home directory by using statx\_set\_api\_key:
 
 ``` r
-statxplorer::statx_set_api_key('YOUR_API_KEY')
+statx::statx_set_api_key('YOUR_API_KEY')
 ```
 
 You can also use statx\_set\_api\_key to update with a new key.
@@ -77,19 +77,19 @@ accessKey <- Sys.getenv("StatXploreApiKey")
 
 ### Requests Folder
 
-statxplorer is based on POST request bodies in JSON format, stored in
-files (more details below). To use statxplorer you must specify a folder
-path where request files will be stored, using
-statx\_set\_request\_folder. Backslashes must be escaped. So for example
-to set the request folder to ‘C:\\Documents\\StatXploreRequests’ run
+statx is based on POST request bodies in JSON format, stored in files
+(more details below). To use statx you must specify a folder path where
+request files will be stored, using statx\_set\_request\_folder.
+Backslashes must be escaped. So for example to set the request folder to
+‘C:\\Documents\\StatXploreRequests’ run
 `statx_set_request_folder('C:\\Documents\\StatXploreRequests')`
 
 ## Examples
 
 ### statx\_add\_request
 
-statxplorer requires a JSON request body to send in a POST request to
-the Stat-Xplore API. To create one, either write one by hand by the
+statx requires a JSON request body to send in a POST request to the
+Stat-Xplore API. To create one, either write one by hand by the
 Stat-Xplore guidelines, or use the webite to build a table and save it
 as Open Data API (.json). An example is included in this project
 (ExampleRequestBody.json). Once you have a .json file containing a
