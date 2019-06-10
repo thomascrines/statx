@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 
 Use statx to download data from [Stat-Xplore](https://stat-xplore.dwp.gov.uk/webapi/jsf/login.xhtml). statx can be used interactively, or as part of a [reproducible analytical pipeline](https://ukgovdatascience.github.io/rap_companion/).
 
-*After development was started, we became aware of a similar package with the same name on [Github](https://github.com/olihawkins/statxplorer). As slightly different functionality is required in this package development is continuing, although the data-wrangling section of the first package was used as a basis for the statx_dataset function. We plan to change the name soon to avoid confusion.*
+There are two existing packages on GitHub that are designed to pull from the Stat-Xplore API; one by  [Oli Hawkins](https://github.com/olihawkins/statxplorer) and one by [David Millson](https://github.com/davidmillson/stat-xplore-R). As slightly different functionality is required in this package development is continuing, although the data-wrangling section of Oli Hawkins package was used in the statx_dataset function.
 
 ## Installation
 

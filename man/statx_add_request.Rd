@@ -17,10 +17,10 @@ statx_add_request(request_name, file_path)
 If \code{FALSE} will return error message.
 }
 \description{
-\code{statx_add_request} copies and renames a JSON file from an existing location to statxplorer.
+\code{statx_add_request} copies and renames a JSON file from an existing location to statx.
 }
 \details{
-\code{statx_add_request} copies and renames a JSON file from an existing location to statxplorer, to make it available
+\code{statx_add_request} copies and renames a JSON file from an existing location to statx, to make it available
 to be called in \code{statx_dataset}.
 The \code{request_name} parameter must be passed a user-defined string in order to name the request.
 The \code{file_path} parameter must be passed a file path of an existing JSON request file.
