@@ -19,10 +19,8 @@
 
 statx_add_request <- function(request_name, file_path) {
 
+  destination <- Sys.getenv("RequestBodyFolderPath")
   file_name <- basename(file_path)
-  subdirectory <- "requestBodies/"
 
-  file.copy(from = file_path, to = subdirectory)
-  file.rename(from = file.path(subdirectory, file_name),
-              to = paste(subdirectory, request_name, ".json", sep = ""))
+  file.copy(from = file_path, to = paste(destination, "\\", request_name, ".json", sep = ""))
 }
