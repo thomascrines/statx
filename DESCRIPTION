@@ -1,11 +1,11 @@
-Package: statxplorer
+Package: statx
 Type: Package
 Title: Access Stat-Xplore API
 Version: 0.1.0
 Authors@R: person("Thomas", "Crines", email = "thomas.crines@gov.scot", role = c("aut", "cre"))
 Description: Pull data from the Stat-Xplore API, allowing data to be pulled as part of a reproducible analytical pipeline.
-URL: https://github.com/thomascrines/statxplorer
-BugReports: https://github.com/thomascrines/statxplorer/issues
+URL: https://github.com/thomascrines/statx
+BugReports: https://github.com/thomascrines/statx/issues
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

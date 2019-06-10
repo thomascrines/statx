@@ -1,4 +1,4 @@
 library(testthat)
 library(statxplorer)
 
-test_check("statxplorer")
+test_check("statx")

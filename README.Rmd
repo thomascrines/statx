@@ -12,11 +12,11 @@ knitr::opts_chunk$set(
   out.width = "100%"
 )
 ```
-[![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip) [![Travis-CI Build Status](https://travis-ci.com/thomascrines/statxplorer.svg?token=u9YrQxZw2wBxcEUArp4X&branch=master)](https://travis-ci.com/thomascrines/statxplorer) 
+[![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip) [![Travis-CI Build Status](https://travis-ci.com/thomascrines/statx.svg?token=u9YrQxZw2wBxcEUArp4X&branch=master)](https://travis-ci.com/thomascrines/statx) 
 
-# statxplorer
+# statx
 
-Use statxplorer to download data from [Stat-Xplore](https://stat-xplore.dwp.gov.uk/webapi/jsf/login.xhtml). statxplorer can be used interactively, or as part of a [reproducible analytical pipeline](https://ukgovdatascience.github.io/rap_companion/).
+Use statx to download data from [Stat-Xplore](https://stat-xplore.dwp.gov.uk/webapi/jsf/login.xhtml). statx can be used interactively, or as part of a [reproducible analytical pipeline](https://ukgovdatascience.github.io/rap_companion/).
 
 *After development was started, we became aware of a similar package with the same name on [Github](https://github.com/olihawkins/statxplorer). As slightly different functionality is required in this package development is continuing, although the data-wrangling section of the first package was used as a basis for the statx_dataset function. We plan to change the name soon to avoid confusion.*
 
@@ -26,18 +26,18 @@ Install opendatascot from GitHub with:
 
 ```{r gh-installation, eval = FALSE}
 # install.packages("devtools")
-devtools::install_github("thomascrines/statxplorer")
+devtools::install_github("thomascrines/statx")
 ```
 
 If the above does not work, you can install from source:
 
-1. Go to the statxplorer [repository](https://github.com/thomascrines/statxplorer) on GitHub
+1. Go to the statx [repository](https://github.com/thomascrines/statx) on GitHub
 1. Click **Clone or download** then **Download ZIP**
 1. Save the file locally (e.g. your H drive) and Unzip
 1. Install with install.packages()
 
 ```{r source-installation, eval = FALSE}
-install.packages("your/directory/statxplorer", repos = NULL,
+install.packages("your/directory/statx", repos = NULL,
                  type="source", lib = "your/R/package/library/directory")
 ```
 
@@ -51,7 +51,7 @@ Stat-Xplore API requires an API key, instructions on how to get one can be obtai
 Once you have an API key, you can add it to an .Renviron file in your home directory by using statx_set_api_key:
 
 ```{r, eval=FALSE}
-statxplorer::statx_set_api_key('YOUR_API_KEY')
+statx::statx_set_api_key('YOUR_API_KEY')
 ```
 
 You can also use statx_set_api_key to update with a new key.
@@ -67,13 +67,13 @@ accessKey <- Sys.getenv("StatXploreApiKey")
 
 ### Requests Folder
 
-statxplorer is based on POST request bodies in JSON format, stored in files (more details below). To use statxplorer you must specify a folder path where request files will be stored, using statx_set_request_folder. Backslashes must be escaped. So for example to set the request folder to 'C:\\Documents\\StatXploreRequests' run `statx_set_request_folder('C:\\Documents\\StatXploreRequests')`
+statx is based on POST request bodies in JSON format, stored in files (more details below). To use statx you must specify a folder path where request files will be stored, using statx_set_request_folder. Backslashes must be escaped. So for example to set the request folder to 'C:\\Documents\\StatXploreRequests' run `statx_set_request_folder('C:\\Documents\\StatXploreRequests')`
 
 ## Examples
 
 ### statx_add_request
 
-statxplorer requires a JSON request body to send in a POST request to the Stat-Xplore API. To create one, either write one by hand by the Stat-Xplore guidelines, or use the webite to build a table and save it as Open Data API (.json). An example is included in this project (ExampleRequestBody.json). Once you have a .json file containing a request, run statx_add_request to add it to statexplorer, passing in your desired name for the file and the path of your existing file. For example, if you have a file with the path 'C:\\Downloads\\PensionCreditsNew001.json', that you want to save as 'PensionCredits', run `statx_add_request('PensionCredits', 'C:\\Downloads\\PensionCreditsNew001.json')`.
+statx requires a JSON request body to send in a POST request to the Stat-Xplore API. To create one, either write one by hand by the Stat-Xplore guidelines, or use the webite to build a table and save it as Open Data API (.json). An example is included in this project (ExampleRequestBody.json). Once you have a .json file containing a request, run statx_add_request to add it to statexplorer, passing in your desired name for the file and the path of your existing file. For example, if you have a file with the path 'C:\\Downloads\\PensionCreditsNew001.json', that you want to save as 'PensionCredits', run `statx_add_request('PensionCredits', 'C:\\Downloads\\PensionCreditsNew001.json')`.
 
 Alternatively, save and rename directly in the folder specified in statx_set_request_folder.
 
