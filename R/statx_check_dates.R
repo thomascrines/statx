@@ -8,10 +8,7 @@
 #'
 #' @export
 
-statx_check_dates <- function() {
-  #temporary variables to test: will be passed in to function later
-# endpoint <- "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/schema/str:database:ACC"
-endpoint <- "https://stat-xplore.dwp.gov.uk/webapi/rest/v1/schema/str:database:PC_New"
+statx_check_dates <- function(endpoint) {
 
 access_key <- Sys.getenv("StatXploreApiKey")
 
